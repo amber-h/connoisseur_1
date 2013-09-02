@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LCBO site</title>
+	<link rel="stylesheet" type="text/css" href="lcbo_style.css">
+</head>
+
+
+<body>
+	<div id="container">
+		<div id="header"> 
+			
+			<div id="page_name">
+				<h1>LCBO</h1>
+			</div>
+
+
+		</div>
+		
+		<div id="innercontainer">
+		<div id="content">
+			<% @products.each do | product | %>
+			<% product_info(product) %>
+			<% if @image_thumb_url != nil %>
+
+				<div class = "row" >
+					<div class = "column_30l" >
+						<img src= <%= @image_thumb_url %> />
+				 	</div>
+				 	
+				 	<div class ="column_70r"> 
+						<div class = "column_70r_1" >
+							<h1><%= @name %> </h1> 
+							<%= @serving_suggestion %>
+							<%= @tasting_note %>
+						</div>
+						<div class = "column_70r_2" >
+							<h2><%= @price_in_cents %></h2>
+						</div>
+					</div>
+				</div>
+				<%end%>
+				<%end%>
+			
+			
+		</div>
+		</div>
+		
+		<div id = "footer"> footer </div>
+	</div>
+
+
+</body>
+</html>
